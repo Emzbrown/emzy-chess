@@ -1,0 +1,27 @@
+name: emzy_chess
+description: Emzy Chess - offline Stockfish play, local Wi-Fi P2P, and game analysis.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Chess rules: FEN parsing and move validation.
+  chess: ^0.8.1
+  # Stockfish engine driven over the UCI protocol.
+  stockfish: ^1.8.1
+  # mDNS discovery/advertising for _chess-game._tcp.
+  bonsoir: ^7.1.5
+  # Evaluation bar graph for game analysis.
+  fl_chart: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

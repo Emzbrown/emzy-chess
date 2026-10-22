@@ -1,0 +1,21 @@
+# Flutter/Dart tooling
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+pubspec.lock
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Platform noise
+android/.gradle/
+ios/Pods/
+ios/.symlinks/
+macos/Pods/
+linux/build/
+windows/build/
+android/.kotlin/

@@ -31,11 +31,14 @@ jobs:
       - name: Run tests
         run: flutter test
 
-      - name: Build release APK
-        run: flutter build apk --release
+      # One APK per CPU architecture: modern phones are arm64-v8a only, so
+      # they download just their slice instead of every engine binary.
+      - name: Build release APKs
+        run: flutter build apk --release --split-per-abi
 
-      - name: Upload APK artifact
+      - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         with:
           name: emzy-chess-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: build/app/outputs/flutter-apk/*-release.apk
+          if-no-files-found: error
